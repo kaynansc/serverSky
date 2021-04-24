@@ -1,3 +1,4 @@
+import cors from "cors";
 import express, { Application } from "express";
 
 import returnResponseError from "./middlewares/returnResponseError";
@@ -15,6 +16,7 @@ class AppController {
   }
 
   middlewares() {
+    this.express.use(cors());
     this.express.use(express.json());
   }
 
